@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.d3ifcool.widgetandroid">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".RandomNumberWidget">
+        <receiver android:name=".RandomNumbersWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -26,6 +27,13 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/random_number_widget_info" />
         </receiver>
+
+        <service android:name="org.d3ifcool.widgetandroid.UpdateWidgetService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
     </application>
+
 
 </manifest>
